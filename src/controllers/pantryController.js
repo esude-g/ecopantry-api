@@ -56,3 +56,19 @@ exports.deleteItem = async (req, res) => {
 
   res.json({ message: 'Item deleted' });
 };
+
+exports.getExpiringItems = async (req, res) => {
+  const today = new Date();
+  const threeDaysLater = new Date();
+  threeDaysLater.setDate(today.getDate() + 3);
+
+  const items = await PantryItem.find({
+    user: req.user._id,
+    expirationDate: {
+      $gte: today,
+      $lte: threeDaysLater
+    }
+  }).sort({ expirationDate: 1 });
+
+  res.json(items);
+};

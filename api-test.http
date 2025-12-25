@@ -58,14 +58,18 @@ GET http://localhost:3000/api/pantry/694d8cb3a0c9993abd53e80d
 Authorization: Bearer {{token}}
 
 ### Update item
-PUT http://localhost:3000/api/pantry/694d8d30a0c9993abd53e812
+PUT http://localhost:3000/api/pantry/694d8d6aa0c9993abd53e815
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "quantity": 5
+  "expirationDate": "2025-12-28"
 }
 
 ### Delete item
 DELETE http://localhost:3000/api/pantry/694d8d30a0c9993abd53e812
+Authorization: Bearer {{token}}
+
+### Get expiring items
+GET http://localhost:3000/api/pantry/expiring
 Authorization: Bearer {{token}}

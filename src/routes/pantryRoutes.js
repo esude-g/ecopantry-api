@@ -4,7 +4,8 @@ const {
     getItems,
     getItemById,
     updateItem,
-    deleteItem
+    deleteItem,
+    getExpiringItems
 } = require('../controllers/pantryController');
 const { protect } = require('../middlewares/authMiddleware');
 
@@ -13,6 +14,8 @@ const router = express.Router();
 router.route('/')
   .post(protect, addItem)
   .get(protect, getItems);
+
+router.get('/expiring', protect, getExpiringItems);
 
 router.route('/:id')
   .get(protect, getItemById)
