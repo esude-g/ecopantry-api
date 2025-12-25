@@ -97,3 +97,32 @@ Authorization: Bearer {{token}}
 ### Get summary
 GET http://localhost:3000/api/reports/summary
 Authorization: Bearer {{token}}
+
+### Add to shopping list
+POST http://localhost:3000/api/shopping-list
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Eggs",
+  "quantity": 6
+}
+
+### Add to shopping list
+POST http://localhost:3000/api/shopping-list
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Bacon",
+  "quantity": 12
+}
+
+### View shopping list
+GET http://localhost:3000/api/shopping-list
+Authorization: Bearer {{token}}
+
+### Remove item from shopping list
+DELETE http://localhost:3000/api/shopping-list/694d99fe7757000ae75433be
+Authorization: Bearer {{token}}
+
