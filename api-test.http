@@ -1,8 +1,6 @@
 ### Health check
 GET http://localhost:3000/health
 
-###
-
 ### Register
 POST http://localhost:3000/api/auth/register
 Content-Type: application/json
@@ -12,8 +10,6 @@ Content-Type: application/json
   "email": "sude@test.com",
   "password": "123456"
 }
-
-###
 
 ### Login
 POST http://localhost:3000/api/auth/login
@@ -26,4 +22,31 @@ Content-Type: application/json
 
 ### Get current user
 GET http://localhost:3000/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGQ4NDM4NTAxZjBlMTJmYmYyNWJmYSIsImlhdCI6MTc2NjY4OTY4NiwiZXhwIjoxNzY3Mjk0NDg2fQ.4RBkQ3s0OyhSA9a8cLHvbI-M8D2o2V-Zgiov9p0nhbE
+
+### Add item
+POST http://localhost:3000/api/pantry
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGQ4NDM4NTAxZjBlMTJmYmYyNWJmYSIsImlhdCI6MTc2NjY4OTY4NiwiZXhwIjoxNzY3Mjk0NDg2fQ.4RBkQ3s0OyhSA9a8cLHvbI-M8D2o2V-Zgiov9p0nhbE
+Content-Type: application/json
+
+{
+  "name": "Milk",
+  "quantity": 2,
+  "category": "Dairy",
+  "expirationDate": "2025-01-02"
+}
+
+### Add item
+POST http://localhost:3000/api/pantry
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGQ4NDM4NTAxZjBlMTJmYmYyNWJmYSIsImlhdCI6MTc2NjY4OTY4NiwiZXhwIjoxNzY3Mjk0NDg2fQ.4RBkQ3s0OyhSA9a8cLHvbI-M8D2o2V-Zgiov9p0nhbE
+Content-Type: application/json
+{
+  "name": "Cheese",
+  "quantity": 3,
+  "category": "Dairy",
+  "expirationDate": "2025-01-02"
+}
+
+### List items
+GET http://localhost:3000/api/pantry
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGQ4NDM4NTAxZjBlMTJmYmYyNWJmYSIsImlhdCI6MTc2NjY4OTY4NiwiZXhwIjoxNzY3Mjk0NDg2fQ.4RBkQ3s0OyhSA9a8cLHvbI-M8D2o2V-Zgiov9p0nhbE
