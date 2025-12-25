@@ -93,3 +93,7 @@ Authorization: Bearer {{token}}
 ### Filter by category
 GET http://localhost:3000/api/pantry/category/Vegetable
 Authorization: Bearer {{token}}
+
+### Get summary
+GET http://localhost:3000/api/reports/summary
+Authorization: Bearer {{token}}
