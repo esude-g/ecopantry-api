@@ -1,3 +1,4 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGQ4NDM4NTAxZjBlMTJmYmYyNWJmYSIsImlhdCI6MTc2NjY5MTQ4MywiZXhwIjoxNzY3Mjk2MjgzfQ.dOEmz5SKl7lbO5pn1DxKw-5C3ARKR_nDmJrsxYVFfgQ
 ### Health check
 GET http://localhost:3000/health
 
@@ -22,11 +23,11 @@ Content-Type: application/json
 
 ### Get current user
 GET http://localhost:3000/api/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGQ4NDM4NTAxZjBlMTJmYmYyNWJmYSIsImlhdCI6MTc2NjY4OTY4NiwiZXhwIjoxNzY3Mjk0NDg2fQ.4RBkQ3s0OyhSA9a8cLHvbI-M8D2o2V-Zgiov9p0nhbE
+Authorization: Bearer {{token}}
 
 ### Add item
 POST http://localhost:3000/api/pantry
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGQ4NDM4NTAxZjBlMTJmYmYyNWJmYSIsImlhdCI6MTc2NjY4OTY4NiwiZXhwIjoxNzY3Mjk0NDg2fQ.4RBkQ3s0OyhSA9a8cLHvbI-M8D2o2V-Zgiov9p0nhbE
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
@@ -38,8 +39,9 @@ Content-Type: application/json
 
 ### Add item
 POST http://localhost:3000/api/pantry
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGQ4NDM4NTAxZjBlMTJmYmYyNWJmYSIsImlhdCI6MTc2NjY4OTY4NiwiZXhwIjoxNzY3Mjk0NDg2fQ.4RBkQ3s0OyhSA9a8cLHvbI-M8D2o2V-Zgiov9p0nhbE
+Authorization: Bearer {{token}}
 Content-Type: application/json
+
 {
   "name": "Cheese",
   "quantity": 3,
@@ -49,4 +51,21 @@ Content-Type: application/json
 
 ### List items
 GET http://localhost:3000/api/pantry
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGQ4NDM4NTAxZjBlMTJmYmYyNWJmYSIsImlhdCI6MTc2NjY4OTY4NiwiZXhwIjoxNzY3Mjk0NDg2fQ.4RBkQ3s0OyhSA9a8cLHvbI-M8D2o2V-Zgiov9p0nhbE
+Authorization: Bearer {{token}}
+
+### Get item by ID
+GET http://localhost:3000/api/pantry/694d8cb3a0c9993abd53e80d
+Authorization: Bearer {{token}}
+
+### Update item
+PUT http://localhost:3000/api/pantry/694d8d30a0c9993abd53e812
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "quantity": 5
+}
+
+### Delete item
+DELETE http://localhost:3000/api/pantry/694d8d30a0c9993abd53e812
+Authorization: Bearer {{token}}
