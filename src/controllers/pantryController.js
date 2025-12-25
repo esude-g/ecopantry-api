@@ -72,3 +72,29 @@ exports.getExpiringItems = async (req, res) => {
 
   res.json(items);
 };
+
+exports.searchItems = async (req, res) => {
+  const { name } = req.query;
+
+  if (!name) {
+    return res.status(400).json({ message: 'Search query is required' });
+  }
+
+  const items = await PantryItem.find({
+    user: req.user._id,
+    name: { $regex: name, $options: 'i' }
+  });
+
+  res.json(items);
+};
+
+exports.getItemsByCategory = async (req, res) => {
+  const { type } = req.params;
+
+  const items = await PantryItem.find({
+    user: req.user._id,
+    category: type
+  });
+
+  res.json(items);
+};

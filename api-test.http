@@ -49,6 +49,18 @@ Content-Type: application/json
   "expirationDate": "2025-01-02"
 }
 
+### Add item
+POST http://localhost:3000/api/pantry
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Broccoli",
+  "quantity": 1,
+  "category": "Vegetable",
+  "expirationDate": "2025-01-01"
+}
+
 ### List items
 GET http://localhost:3000/api/pantry
 Authorization: Bearer {{token}}
@@ -72,4 +84,12 @@ Authorization: Bearer {{token}}
 
 ### Get expiring items
 GET http://localhost:3000/api/pantry/expiring
+Authorization: Bearer {{token}}
+
+### Search by name
+GET http://localhost:3000/api/pantry/search?name=miL
+Authorization: Bearer {{token}}
+
+### Filter by category
+GET http://localhost:3000/api/pantry/category/Vegetable
 Authorization: Bearer {{token}}

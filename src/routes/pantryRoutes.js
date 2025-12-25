@@ -5,7 +5,9 @@ const {
     getItemById,
     updateItem,
     deleteItem,
-    getExpiringItems
+    getExpiringItems,
+    searchItems,
+    getItemsByCategory
 } = require('../controllers/pantryController');
 const { protect } = require('../middlewares/authMiddleware');
 
@@ -16,6 +18,9 @@ router.route('/')
   .get(protect, getItems);
 
 router.get('/expiring', protect, getExpiringItems);
+
+router.get('/search', protect, searchItems);
+router.get('/category/:type', protect, getItemsByCategory);
 
 router.route('/:id')
   .get(protect, getItemById)
